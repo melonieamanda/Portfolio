@@ -1,74 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golden Healing Solutions | Web Development Bootcamp</title>
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f8f6f0;color:#1b1b1b;line-height:1.6}a{text-decoration:none;color:inherit}
-.header{position:sticky;top:0;z-index:1000;background:#111;color:#fff;border-bottom:1px solid rgba(212,175,55,.35)}
-.nav{max-width:1200px;margin:auto;min-height:74px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-family:Georgia,serif;font-size:1.15rem;font-weight:700;letter-spacing:1.5px;color:#d4af37}
-.nav-links{display:flex;gap:8px;align-items:center}.nav-links a{padding:10px 14px;border-radius:8px;color:#fff;font-weight:600}.nav-links a:hover,.nav-links a.active{background:#d4af37;color:#111}
-.menu-btn{display:none;background:transparent;color:#fff;border:1px solid #555;border-radius:8px;padding:9px 12px;font-size:20px;cursor:pointer}
-.hero{background:linear-gradient(135deg,#111,#191919 65%,#2a2414);color:#fff;padding:90px 24px}.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
-.badge{display:inline-block;border:1px solid #d4af37;color:#d4af37;border-radius:999px;padding:7px 14px;font-size:.85rem;font-weight:700}
-h1{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;margin:20px 0}.gold{color:#d4af37}.hero p{font-size:1.15rem;color:#ddd;max-width:700px}
-.buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.btn{display:inline-block;padding:14px 20px;border-radius:9px;font-weight:700;border:1px solid #d4af37}.btn-gold{background:#d4af37;color:#111}.btn-outline{color:#fff}.btn:hover{transform:translateY(-2px)}
-.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.35);border-radius:20px;padding:35px}.hero-card .icon{font-size:60px}
-.section{max-width:1200px;margin:auto;padding:75px 24px}.section-title{text-align:center;font-family:Georgia,serif;font-size:2.2rem;margin:0 0 12px}.section-subtitle{text-align:center;color:#666;max-width:750px;margin:0 auto 45px}
-.cards,.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid #e7dfc8;border-radius:15px;padding:28px;box-shadow:0 8px 25px rgba(0,0,0,.06)}.card-icon{font-size:35px}.card h3{color:#8b6b16}
-.portfolio{background:#111;color:#fff}.portfolio .section-title{color:#d4af37}.portfolio .section-subtitle{color:#ccc}.project{border:1px solid #3b3522;border-radius:14px;padding:25px;background:#181818}.project h3{color:#d4af37}
-.code-preview{background:#fff;border-radius:18px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:25px;border:1px solid #e7dfc8}.code-preview pre{background:#171717;color:#f5f5f5;padding:20px;border-radius:10px;overflow:auto}
-.cta{text-align:center;background:#f0e8d0}footer{background:#111;color:#aaa;text-align:center;padding:35px 20px}footer strong{color:#d4af37}
-@media(max-width:850px){.nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:#111;padding:15px 24px;flex-direction:column}.nav-links.open{display:flex}.nav-links a{text-align:center}.menu-btn{display:block}.hero-inner{grid-template-columns:1fr}.cards,.project-grid{grid-template-columns:1fr}.code-preview{grid-template-columns:1fr}}
-@media(max-width:500px){.hero{padding:65px 18px}.section{padding:55px 18px}.nav{padding:0 18px}.buttons .btn{width:100%;text-align:center}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Melonie Campbell's technical operations and project management portfolio, featuring Golden Healing Solutions and Happy Minds Studios.">
+  <meta name="theme-color" content="#090806">
+  <title>Melonie Campbell | Technical Operations & Project Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #090806;
+      --ink-soft: #12100c;
+      --panel: rgba(25, 22, 16, 0.84);
+      --panel-solid: #18150f;
+      --cream: #f5f0e6;
+      --muted: #b8b0a0;
+      --gold: #c8a45d;
+      --gold-bright: #f0d696;
+      --gold-deep: #7d5d25;
+      --line: rgba(216, 181, 109, 0.24);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 84% 2%, rgba(181, 136, 58, 0.14), transparent 28rem),
+        radial-gradient(circle at 8% 34%, rgba(240, 214, 150, 0.055), transparent 24rem),
+        var(--ink);
+      font: 400 16px/1.75 var(--sans);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    ::selection { color: #0b0905; background: var(--gold-bright); }
+
+    .container { width: min(1180px, calc(100% - 42px)); margin-inline: auto; }
+    .eyebrow {
+      color: var(--gold-bright);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(9, 8, 6, 0.83);
+      backdrop-filter: blur(18px);
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 13px; }
+    .monogram {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold-bright);
+      font: 700 1.18rem/1 var(--serif);
+      box-shadow: inset 0 0 0 4px var(--ink), inset 0 0 0 5px rgba(200,164,93,.25);
+    }
+
+    .brand-copy { line-height: 1.15; }
+    .brand-copy strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.16rem;
+      letter-spacing: 0.04em;
+    }
+    .brand-copy span { color: var(--muted); font-size: 0.65rem; letter-spacing: 0.13em; text-transform: uppercase; }
+
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: #d7d0c3; font-size: 0.77rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--gold-bright); }
+    .menu-button { display: none; border: 0; color: var(--cream); background: transparent; font-size: 1.6rem; cursor: pointer; }
+
+    .hero { padding: 126px 0 92px; position: relative; }
+    .hero::after {
+      content: "MC";
+      position: absolute;
+      right: max(4vw, 18px);
+      top: 20px;
+      z-index: -1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(200,164,93,.075);
+      font: 700 clamp(12rem, 31vw, 31rem)/1 var(--serif);
+      letter-spacing: -0.12em;
+    }
+
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 80px; align-items: end; }
+    .hero h1 {
+      max-width: 900px;
+      margin: 16px 0 28px;
+      font: 600 clamp(3.8rem, 8.2vw, 7.7rem)/0.87 var(--serif);
+      letter-spacing: -0.045em;
+    }
+    .hero h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(100deg, var(--gold-deep), var(--gold-bright) 46%, #fff1bd 55%, var(--gold) 84%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-lede { max-width: 740px; margin: 0; color: #cbc3b4; font-size: clamp(1rem, 1.7vw, 1.18rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid var(--gold);
+      color: #0d0b07;
+      background: linear-gradient(115deg, #a57b32, #eed18f 52%, #b6893f);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(200,164,93,.18); }
+    .button.secondary { color: var(--gold-bright); background: transparent; }
+
+    .hero-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      box-shadow: var(--shadow);
+    }
+    .hero-card .rule { width: 46px; height: 1px; margin: 17px 0 20px; background: var(--gold); }
+    .hero-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .hero-card strong { display: block; margin-bottom: 3px; color: var(--cream); font-family: var(--serif); font-size: 1.55rem; }
+    .hero-card .meta { display: grid; gap: 19px; margin-top: 25px; }
+
+    .metrics { border-block: 1px solid var(--line); background: rgba(255,255,255,.018); }
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .metric { min-height: 128px; padding: 29px 25px; border-right: 1px solid var(--line); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; color: var(--gold-bright); font: 600 2.45rem/1 var(--serif); }
+    .metric span { display: block; margin-top: 11px; color: var(--muted); font-size: .74rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+
+    section.content { padding: 102px 0; }
+    .section-heading { display: grid; grid-template-columns: .76fr 1.24fr; gap: 72px; align-items: end; margin-bottom: 52px; }
+    .section-heading h2 { margin: 8px 0 0; font: 600 clamp(2.7rem, 5vw, 4.6rem)/.96 var(--serif); letter-spacing: -.035em; }
+    .section-heading p { margin: 0; color: var(--muted); }
+
+    .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .project {
+      position: relative;
+      min-height: 400px;
+      overflow: hidden;
+      padding: 38px;
+      border: 1px solid var(--line);
+      background: linear-gradient(150deg, rgba(255,255,255,.055), rgba(255,255,255,.014));
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .project::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -90px;
+      bottom: -95px;
+      border: 1px solid rgba(240,214,150,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(200,164,93,.025), 0 0 0 58px rgba(200,164,93,.018);
+    }
+    .project:hover { transform: translateY(-5px); border-color: rgba(240,214,150,.55); }
+    .project-number { color: var(--gold); font-size: .72rem; font-weight: 800; letter-spacing: .18em; }
+    .project h3 { margin: 78px 0 10px; font: 600 clamp(2rem, 3.5vw, 3.25rem)/1 var(--serif); }
+    .project .role { color: var(--gold-bright); font-size: .76rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .project p { max-width: 545px; color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .tag { padding: 6px 10px; border: 1px solid var(--line); color: #d9d0bf; font-size: .68rem; letter-spacing: .055em; text-transform: uppercase; }
+
+    .happy-minds {
+      grid-column: 1 / -1;
+      min-height: 470px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 54px;
+      background:
+        radial-gradient(circle at 85% 30%, rgba(240,214,150,.11), transparent 15rem),
+        linear-gradient(135deg, #1f1a10, #0d0c09 70%);
+    }
+    .happy-minds h3 { margin-top: 54px; }
+    .case-points { align-self: center; display: grid; gap: 12px; }
+    .case-point { padding: 18px 20px; border-left: 1px solid var(--gold); background: rgba(255,255,255,.025); }
+    .case-point strong { display: block; margin-bottom: 4px; font-family: var(--serif); font-size: 1.25rem; }
+    .case-point span { color: var(--muted); font-size: .86rem; }
+
+    .experience { background: var(--ink-soft); border-block: 1px solid var(--line); }
+    .timeline { border-top: 1px solid var(--line); }
+    .experience-row {
+      display: grid;
+      grid-template-columns: 180px minmax(230px, .8fr) 1.6fr;
+      gap: 38px;
+      padding: 33px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .experience-row time { color: var(--gold-bright); font-size: .76rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .experience-row h3 { margin: 0; font: 600 1.7rem/1.1 var(--serif); }
+    .experience-row h3 span { display: block; margin-top: 7px; color: var(--muted); font: 500 .74rem/1.4 var(--sans); letter-spacing: .09em; text-transform: uppercase; }
+    .experience-row p { margin: 0; color: var(--muted); }
+
+    .capabilities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .capability { padding: 30px; border-top: 1px solid var(--gold); background: rgba(255,255,255,.026); }
+    .capability h3 { margin: 0 0 12px; font: 600 1.55rem/1.1 var(--serif); }
+    .capability p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .education-card {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 50px;
+      padding: 44px;
+      border: 1px solid var(--line);
+      background: linear-gradient(125deg, rgba(200,164,93,.09), rgba(255,255,255,.018));
+    }
+    .education-card h3 { margin: 8px 0 13px; font: 600 2.15rem/1.05 var(--serif); }
+    .education-card p { margin: 0; color: var(--muted); }
+    .education-list { display: grid; gap: 12px; }
+    .education-list div { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .education-list strong { display: block; color: var(--gold-bright); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    .education-list span { color: var(--muted); font-size: .86rem; }
+
+    .contact { padding: 110px 0; text-align: center; }
+    .contact h2 { max-width: 820px; margin: 12px auto 22px; font: 600 clamp(3.1rem, 7vw, 6rem)/.93 var(--serif); letter-spacing: -.04em; }
+    .contact p { max-width: 680px; margin: 0 auto 31px; color: var(--muted); }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+    footer { padding: 30px 0 42px; border-top: 1px solid var(--line); color: var(--muted); font-size: .76rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    footer strong { color: var(--cream); }
+
+    .reveal { animation: reveal .8s both; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+    @media (max-width: 900px) {
+      .menu-button { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        inset: 78px 0 auto;
+        padding: 25px;
+        flex-direction: column;
+        background: #0c0a07;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .hero-grid, .section-heading, .happy-minds, .education-card { grid-template-columns: 1fr; }
+      .hero-grid { gap: 48px; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .work-grid { grid-template-columns: 1fr; }
+      .happy-minds { grid-column: auto; }
+      .experience-row { grid-template-columns: 130px 1fr; }
+      .experience-row p { grid-column: 2; }
+      .capabilities-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .brand-copy span { display: none; }
+      .hero { padding: 92px 0 70px; }
+      .hero h1 { font-size: clamp(3.45rem, 19vw, 5.3rem); }
+      .project { min-height: auto; padding: 28px; }
+      .project h3 { margin-top: 52px; }
+      .metrics-grid, .capabilities-grid { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: 0; }
+      .experience-row { grid-template-columns: 1fr; gap: 12px; }
+      .experience-row p { grid-column: auto; }
+      section.content { padding: 76px 0; }
+      .education-card { padding: 28px; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+
+    @media print {
+      .nav-wrap, .hero-actions, .contact .button { display: none !important; }
+      body { color: #16120b; background: #fff; }
+      body::before, .hero::after { display: none; }
+      .hero, section.content, .contact { padding: 38px 0; }
+      .hero h1, .section-heading h2, .contact h2 { color: #111; }
+      .hero h1 span { color: #8b681f; -webkit-text-fill-color: #8b681f; }
+      .hero-lede, .section-heading p, .project p, .experience-row p, .capability p, .education-card p, .education-list span { color: #4e493f; }
+      .project, .hero-card, .capability, .education-card { break-inside: avoid; color: #111; background: #fff; box-shadow: none; }
+    }
+  </style>
 </head>
 <body>
-<header class="header"><nav class="nav">
-<a href="index.html" class="logo">GOLDEN HEALING SOLUTIONS</a>
-<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
-<div class="nav-links" id="navLinks"><a href="index.html" class="active">Home</a><a href="code-practice.html">Code Practice</a></div>
-</nav></header>
+  <header class="nav-wrap">
+    <nav class="container" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Melonie Campbell portfolio home">
+        <span class="monogram" aria-hidden="true">MC</span>
+        <span class="brand-copy"><strong>Melonie Campbell</strong><span>Technical Operations · Project Leadership</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#work">Selected Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<main>
-<section class="hero"><div class="hero-inner"><div>
-<span class="badge">WEB DEVELOPMENT BOOTCAMP</span>
-<h1>Build. Practice. <span class="gold">Create.</span></h1>
-<p>Learn practical web development through guided lessons, hands-on coding, projects, and portfolio-ready work.</p>
-<div class="buttons"><a class="btn btn-gold" href="code-practice.html">💻 Start Code Practice</a><a class="btn btn-outline" href="#about">Explore the Program</a></div>
-</div><div class="hero-card"><div class="icon">🌐</div><h2>Learn by Building</h2><p>Practice HTML, CSS, and JavaScript in your browser and see your work come to life with a live preview.</p></div></div></section>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Portfolio · Atlanta, Georgia · Remote</div>
+          <h1>Melonie <span>Campbell</span></h1>
+          <p class="hero-lede">Technical support leader, operations builder, and project manager turning ambitious ideas into organized systems, polished digital products, and dependable customer experiences.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">Explore My Work</a>
+            <button class="button secondary" type="button" onclick="window.print()">Save as PDF</button>
+          </div>
+        </div>
+        <aside class="hero-card reveal" aria-label="Professional profile">
+          <div class="eyebrow">Professional Profile</div>
+          <div class="rule"></div>
+          <strong>Technical Operations & Project Management</strong>
+          <p>Cross-functional leadership spanning technology, service delivery, education, business operations, risk awareness, and digital product development.</p>
+          <div class="meta">
+            <p><strong>Current Focus</strong>Remote technical support, project coordination, and operations roles</p>
+            <p><strong>Education</strong>Accelerated B.S. & M.S. in Information Technology, WGU</p>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<section class="section" id="about"><h2 class="section-title">Welcome to Golden Healing Solutions</h2>
-<p class="section-subtitle">A practical learning environment designed to help you move from learning concepts to actually building websites and applications.</p>
-<div class="cards">
-<div class="card"><div class="card-icon">📚</div><h3>Structured Learning</h3><p>Follow lessons in a clear sequence, complete knowledge checks, and build your skills one section at a time.</p></div>
-<div class="card"><div class="card-icon">💻</div><h3>Hands-On Practice</h3><p>Write code yourself instead of only reading about it. Experiment, run your code, and immediately see the result.</p></div>
-<div class="card"><div class="card-icon">🎓</div><h3>Career-Focused Projects</h3><p>Work toward projects you can refine and use as portfolio pieces to demonstrate your skills.</p></div>
-</div></section>
+    <section class="metrics" aria-label="Portfolio highlights">
+      <div class="container metrics-grid">
+        <div class="metric"><strong>0→1</strong><span>Business & product launches</span></div>
+        <div class="metric"><strong>15+</strong><span>Years using Microsoft 365</span></div>
+        <div class="metric"><strong>2</strong><span>Founder-led digital brands</span></div>
+        <div class="metric"><strong>360°</strong><span>Operations ownership</span></div>
+      </div>
+    </section>
 
-<section class="section"><h2 class="section-title">Practice Your Code</h2>
-<p class="section-subtitle">Write HTML, CSS, and JavaScript and preview your website beside your code.</p>
-<div class="code-preview"><div><h3>💻 Your Code</h3><pre><code>&lt;h1&gt;Hello, World!&lt;/h1&gt;
-&lt;p&gt;I am learning web development.&lt;/p&gt;</code></pre></div>
-<div><h3>👀 Live Preview</h3><div style="border:2px dashed #d4af37;border-radius:10px;padding:30px;text-align:center"><h2 style="margin-top:0">Hello, World!</h2><p>I am learning web development.</p></div></div></div>
-<div style="text-align:center;margin-top:25px"><a class="btn btn-gold" href="code-practice.html">Open Code Practice →</a></div>
-</section>
+    <section class="content" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="eyebrow">Selected Work</div><h2>Ideas built into real experiences.</h2></div>
+          <p>My portfolio combines hands-on technical execution with the operational discipline required to move work from concept and planning through launch, quality assurance, support, and continuous improvement.</p>
+        </div>
 
-<section class="portfolio"><div class="section"><h2 class="section-title">Build Your Portfolio</h2>
-<p class="section-subtitle">Complete multiple projects throughout the bootcamp that you can continue developing for your professional portfolio.</p>
-<div class="project-grid">
-<div class="project"><h3>Project 1</h3><p>Responsive Business Website</p><small>HTML • CSS • Responsive Design</small></div>
-<div class="project"><h3>Project 2</h3><p>Interactive JavaScript Application</p><small>HTML • CSS • JavaScript</small></div>
-<div class="project"><h3>Project 3</h3><p>Full-Stack Capstone Application</p><small>Full-Stack Development</small></div>
-</div></div></section>
+        <div class="work-grid">
+          <article class="project happy-minds">
+            <div>
+              <div class="project-number">FEATURED EXPERIENCE · 01</div>
+              <h3>Happy Minds Studios</h3>
+              <div class="role">Founder · Product & Project Lead</div>
+              <p>Designed and directed a children's educational platform that transforms early-learning goals into interactive games, guided experiences, and family-friendly digital products.</p>
+              <div class="tags"><span class="tag">Product Strategy</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">UX & QA</span></div>
+            </div>
+            <div class="case-points">
+              <div class="case-point"><strong>Product Roadmap</strong><span>Defined learning paths, game requirements, parent access, subscriptions, and release priorities.</span></div>
+              <div class="case-point"><strong>Cross-Functional Delivery</strong><span>Coordinated technology, content, branding, media, testing, and deployment decisions.</span></div>
+              <div class="case-point"><strong>Quality & Iteration</strong><span>Tracked visual, content, navigation, media-routing, and access issues through resolution.</span></div>
+            </div>
+          </article>
 
-<section class="section cta"><h2 class="section-title">Ready to Practice?</h2><p class="section-subtitle">Start with the browser-based coding environment.</p><a class="btn btn-gold" href="code-practice.html">💻 Go to Code Practice</a></section>
-</main>
-<footer><strong>Golden Healing Solutions</strong><br>Web Development Bootcamp<br>© 2026 Golden Healing Solutions. All rights reserved.</footer>
-<script>
-const menuBtn=document.getElementById("menuBtn"),navLinks=document.getElementById("navLinks");
-menuBtn.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuBtn.setAttribute("aria-expanded",open)});
-</script>
-</body></html>
+          <article class="project">
+            <div class="project-number">SELECTED WORK · 02</div>
+            <h3>Golden Healing Solutions</h3>
+            <div class="role">Founder · Technical Support Lead</div>
+            <p>Built and operated a mission-driven employment and training business, including service workflows, client support, digital systems, learning programs, and day-to-day operational processes.</p>
+            <div class="tags"><span class="tag">Service Operations</span><span class="tag">CRM</span><span class="tag">Training</span><span class="tag">Process Design</span></div>
+          </article>
+
+          <article class="project">
+            <div class="project-number">SELECTED WORK · 03</div>
+            <h3>Service Desk Operations</h3>
+            <div class="role">Technical Support · SLA Management</div>
+            <p>Managed technical incidents, prioritized support demand, documented resolutions, supported users, and maintained clear escalation and communication practices in fast-moving environments.</p>
+            <div class="tags"><span class="tag">Ticketing</span><span class="tag">Troubleshooting</span><span class="tag">Escalation</span><span class="tag">Knowledge Base</span></div>
+          </article>
+
+          <article class="project">
+            <div class="project-number">SELECTED WORK · 04</div>
+            <h3>Risk & Process Review</h3>
+            <div class="role">Operational Controls · Root-Cause Analysis</div>
+            <p>Applied structured review, documentation, pattern identification, and customer-centered problem solving to reduce process gaps and support consistent decisions.</p>
+            <div class="tags"><span class="tag">Root Cause</span><span class="tag">Risk Awareness</span><span class="tag">Auditing</span><span class="tag">Reporting</span></div>
+          </article>
+
+          <article class="project">
+            <div class="project-number">SELECTED WORK · 05</div>
+            <h3>Creative & Event Operations</h3>
+            <div class="role">Planning · Logistics · Client Experience</div>
+            <p>Translated creative concepts into organized delivery plans involving schedules, supplies, stakeholder expectations, presentation standards, and on-site execution.</p>
+            <div class="tags"><span class="tag">Logistics</span><span class="tag">Vendor Coordination</span><span class="tag">Quality Control</span><span class="tag">Client Service</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content experience" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="eyebrow">Experience</div><h2>Leadership grounded in execution.</h2></div>
+          <p>I bring an owner’s accountability to every role: clarify the need, organize the work, communicate early, document the process, and stay with the problem until it is resolved.</p>
+        </div>
+        <div class="timeline">
+          <article class="experience-row">
+            <time>2024 — Present</time>
+            <h3>Golden Healing Solutions LLC<span>Founder & Technical Support Lead</span></h3>
+            <p>Leads technical support, workforce assistance, business systems, operational documentation, customer workflows, onboarding support, training initiatives, and digital-service delivery for a small mission-driven organization.</p>
+          </article>
+          <article class="experience-row">
+            <time>Present</time>
+            <h3>Happy Minds Studios<span>Founder · Product & Project Lead</span></h3>
+            <p>Directs the design and development of a children's learning platform, managing product scope, user experience, educational content, technical implementation, subscriptions, testing, branding, and launch readiness.</p>
+          </article>
+          <article class="experience-row">
+            <time>2024</time>
+            <h3>Akkodis<span>Service Desk Analyst</span></h3>
+            <p>Provided structured technical support, incident documentation, troubleshooting, escalation, and end-user communication while working within service expectations and established procedures.</p>
+          </article>
+          <article class="experience-row">
+            <time>Prior Experience</time>
+            <h3>VXI<span>Patient Care Advocate</span></h3>
+            <p>Supported customers in a healthcare-related environment, balancing accuracy, empathy, privacy awareness, clear documentation, and timely issue resolution.</p>
+          </article>
+          <article class="experience-row">
+            <time>2017 — 2019</time>
+            <h3>NYHRC<span>Administrative Assistant & Technical Support</span></h3>
+            <p>Combined administrative coordination with hands-on technology support, account assistance, documentation, scheduling, and dependable day-to-day operational service.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="capabilities">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="eyebrow">Core Capabilities</div><h2>Cross-industry value, clearly translated.</h2></div>
+          <p>Whether I am supporting users, building a digital product, or coordinating a new initiative, I use the same dependable operating framework: scope, prioritize, execute, communicate, verify, and improve.</p>
+        </div>
+        <div class="capabilities-grid">
+          <article class="capability"><h3>Technical Support</h3><p>Issue triage, software and account support, user guidance, documentation, escalation, onboarding, and service-focused communication.</p></article>
+          <article class="capability"><h3>Project Coordination</h3><p>Scope clarification, requirements, timelines, task ownership, stakeholder updates, risk tracking, quality checks, and delivery follow-through.</p></article>
+          <article class="capability"><h3>Business Operations</h3><p>Workflow design, standard operating procedures, intake systems, customer journeys, vendor coordination, and continuous improvement.</p></article>
+          <article class="capability"><h3>Digital Product Delivery</h3><p>Product planning, responsive web experiences, content systems, testing, subscription flows, launch coordination, and iterative refinement.</p></article>
+          <article class="capability"><h3>Microsoft 365</h3><p>Long-term practical experience with Microsoft 365 productivity tools, collaboration, file management, communication, and business workflows.</p></article>
+          <article class="capability"><h3>Customer Experience</h3><p>Empathetic service, expectation setting, issue ownership, clear written communication, privacy awareness, and relationship support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container">
+        <div class="education-card">
+          <div>
+            <div class="eyebrow">Education & Development</div>
+            <h3>Accelerated Information Technology B.S. & M.S.</h3>
+            <p>Western Governors University · In progress. Building deeper capability across information technology, web development, systems, user experience, security, and IT project management.</p>
+          </div>
+          <div class="education-list">
+            <div><strong>Current Academic Focus</strong><span>Information Technology · Web Development · User Interface Design</span></div>
+            <div><strong>Professional Track</strong><span>IT Support · Operations · Project Management</span></div>
+            <div><strong>Certification Roadmap</strong><span>CompTIA A+ · Network+ · Security+ · CAPM/PMP pathway</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="eyebrow">Let’s Work Together</div>
+        <h2>Ready to bring structure, service, and momentum to the work.</h2>
+        <p>Available for remote technical support, project coordination, service operations, implementation support, and customer-experience opportunities.</p>
+        <div class="contact-links">
+          <a class="button" href="mailto:info@goldenhealingsolutions.com">Email Melonie</a>
+          <a class="button secondary" href="https://goldenhealingsolutions.com" target="_blank" rel="noopener noreferrer">Golden Healing Solutions</a>
+          <a class="button secondary" href="https://happyminds.studio" target="_blank" rel="noopener noreferrer">Happy Minds Studios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span><strong>Melonie Campbell</strong> · Technical Operations & Project Management</span>
+      <span>© <span id="year"></span> Melonie Campbell</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.getElementById('navLinks');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.textContent = isOpen ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
