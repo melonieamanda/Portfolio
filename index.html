@@ -1,394 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical & Operations Management Portfolio | Melonie Campbell</title>
-    <style>
-        :root {
-            --bg-main: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --primary: #0284c7;
-            --accent: #38bdf8;
-            --border: #334155;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        /* Header / Hero */
-        header {
-            text-align: center;
-            padding: 3rem 1.5rem;
-            background: var(--bg-card);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .bio {
-            color: var(--text-sub);
-            max-width: 780px;
-            margin: 0 auto 1.5rem auto;
-            font-size: 0.98rem;
-        }
-
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .badge {
-            background: rgba(2, 132, 199, 0.2);
-            color: var(--accent);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            color: var(--text-main);
-            margin-bottom: 1.2rem;
-            border-left: 4px solid var(--primary);
-            padding-left: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Case Study Cards */
-        .card {
-            background: var(--bg-card);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            border-color: var(--primary);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin-bottom: 0.3rem;
-        }
-
-        .card .meta {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .card ul {
-            padding-left: 1.2rem;
-            color: var(--text-sub);
-        }
-
-        .card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .card li strong {
-            color: var(--text-main);
-        }
-
-        /* Mapping Table */
-        .mapping-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-card);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-
-        .mapping-table th, .mapping-table td {
-            padding: 10px 14px;
-            text-align: left;
-            font-size: 0.88rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mapping-table th {
-            background-color: #0284c7;
-            color: #ffffff;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.5px;
-        }
-
-        .mapping-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .mapping-table td strong {
-            color: var(--accent);
-        }
-
-        /* Competencies Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-box {
-            background: var(--bg-card);
-            padding: 1.2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .skill-box h4 {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .skill-box ul {
-            padding-left: 1rem;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-        }
-
-        .skill-box li {
-            margin-bottom: 0.3rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: var(--text-sub);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border);
-            margin-top: 3rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Healing Solutions | Web Development Bootcamp</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f8f6f0;color:#1b1b1b;line-height:1.6}a{text-decoration:none;color:inherit}
+.header{position:sticky;top:0;z-index:1000;background:#111;color:#fff;border-bottom:1px solid rgba(212,175,55,.35)}
+.nav{max-width:1200px;margin:auto;min-height:74px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:Georgia,serif;font-size:1.15rem;font-weight:700;letter-spacing:1.5px;color:#d4af37}
+.nav-links{display:flex;gap:8px;align-items:center}.nav-links a{padding:10px 14px;border-radius:8px;color:#fff;font-weight:600}.nav-links a:hover,.nav-links a.active{background:#d4af37;color:#111}
+.menu-btn{display:none;background:transparent;color:#fff;border:1px solid #555;border-radius:8px;padding:9px 12px;font-size:20px;cursor:pointer}
+.hero{background:linear-gradient(135deg,#111,#191919 65%,#2a2414);color:#fff;padding:90px 24px}.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.badge{display:inline-block;border:1px solid #d4af37;color:#d4af37;border-radius:999px;padding:7px 14px;font-size:.85rem;font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;margin:20px 0}.gold{color:#d4af37}.hero p{font-size:1.15rem;color:#ddd;max-width:700px}
+.buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.btn{display:inline-block;padding:14px 20px;border-radius:9px;font-weight:700;border:1px solid #d4af37}.btn-gold{background:#d4af37;color:#111}.btn-outline{color:#fff}.btn:hover{transform:translateY(-2px)}
+.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.35);border-radius:20px;padding:35px}.hero-card .icon{font-size:60px}
+.section{max-width:1200px;margin:auto;padding:75px 24px}.section-title{text-align:center;font-family:Georgia,serif;font-size:2.2rem;margin:0 0 12px}.section-subtitle{text-align:center;color:#666;max-width:750px;margin:0 auto 45px}
+.cards,.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid #e7dfc8;border-radius:15px;padding:28px;box-shadow:0 8px 25px rgba(0,0,0,.06)}.card-icon{font-size:35px}.card h3{color:#8b6b16}
+.portfolio{background:#111;color:#fff}.portfolio .section-title{color:#d4af37}.portfolio .section-subtitle{color:#ccc}.project{border:1px solid #3b3522;border-radius:14px;padding:25px;background:#181818}.project h3{color:#d4af37}
+.code-preview{background:#fff;border-radius:18px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:25px;border:1px solid #e7dfc8}.code-preview pre{background:#171717;color:#f5f5f5;padding:20px;border-radius:10px;overflow:auto}
+.cta{text-align:center;background:#f0e8d0}footer{background:#111;color:#aaa;text-align:center;padding:35px 20px}footer strong{color:#d4af37}
+@media(max-width:850px){.nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:#111;padding:15px 24px;flex-direction:column}.nav-links.open{display:flex}.nav-links a{text-align:center}.menu-btn{display:block}.hero-inner{grid-template-columns:1fr}.cards,.project-grid{grid-template-columns:1fr}.code-preview{grid-template-columns:1fr}}
+@media(max-width:500px){.hero{padding:65px 18px}.section{padding:55px 18px}.nav{padding:0 18px}.buttons .btn{width:100%;text-align:center}}
+</style>
 </head>
 <body>
+<header class="header"><nav class="nav">
+<a href="index.html" class="logo">GOLDEN HEALING SOLUTIONS</a>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+<div class="nav-links" id="navLinks"><a href="index.html" class="active">Home</a><a href="code-practice.html">Code Practice</a></div>
+</nav></header>
 
-    <div class="container">
-        
-        <!-- Header -->
-        <header>
-            <h1>GOLDEN HEALING SOLUTIONS LLC</h1>
-            <div class="subtitle">Technical, Operations & Project Management Portfolio</div>
-            <p class="bio">
-                Comprehensive portfolio showcasing multi-domain project execution: 0-to-1 business builds, service desk operations, fraud risk analysis, licensed healthcare/wellness practices, luxury catering execution, and creative team direction.
-            </p>
-            <div class="badge-container">
-                <span class="badge">0-to-1 Business & Tech Launch</span>
-                <span class="badge">Licensed Esthetics Operations</span>
-                <span class="badge">Service Desk & SLA Mgmt</span>
-                <span class="badge">Fraud Risk & Process Auditing</span>
-                <span class="badge">Luxury Event & Catering Logistics</span>
-            </div>
-        </header>
+<main>
+<section class="hero"><div class="hero-inner"><div>
+<span class="badge">WEB DEVELOPMENT BOOTCAMP</span>
+<h1>Build. Practice. <span class="gold">Create.</span></h1>
+<p>Learn practical web development through guided lessons, hands-on coding, projects, and portfolio-ready work.</p>
+<div class="buttons"><a class="btn btn-gold" href="code-practice.html">💻 Start Code Practice</a><a class="btn btn-outline" href="#about">Explore the Program</a></div>
+</div><div class="hero-card"><div class="icon">🌐</div><h2>Learn by Building</h2><p>Practice HTML, CSS, and JavaScript in your browser and see your work come to life with a live preview.</p></div></div></section>
 
-        <!-- Comprehensive PM Mapping Table -->
-        <section>
-            <h2>Cross-Industry PM Competency Mapping</h2>
-            <table class="mapping-table">
-                <thead>
-                    <tr>
-                        <th>Experience Domain & Real-World Activity</th>
-                        <th>Project Management Competency</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Golden Healing Solutions LLC:</strong> 0-to-1 business setup, CRM implementation, call center operations, SOP policies, budgets, hiring/firing</td>
-                        <td><strong>Project Initiation, Scope Control, Human Capital Management & Governance</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Licensed Esthetician Practice:</strong> Client consultations, state board sanitation standards, medical product inventory, intake records, custom treatments</td>
-                        <td><strong>Regulatory Compliance, Requirements Gathering, Inventory Control & Client Operations</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Luxury Catering & Restaurant Lead:</strong> Start-to-finish event prep, pre-shift team meetings, lead server closing task delegation, setup & breakdown</td>
-                        <td><strong>End-to-End Event Lifecycle Execution, Shift Task Allocation & Team Briefings</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hospitality Logistics (Age 15+):</strong> Inventory management, stocking, bar backing, cashier POS cash reconciliation, high-volume event execution</td>
-                        <td><strong>Material & Resource Logistics, Asset Audits & Financial Control</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Fiserv (Fraud Analyst):</strong> Alert stream monitoring, pattern anomaly detection, case investigations, root-cause audits, compliance reporting</td>
-                        <td><strong>Risk Management, Process Auditing & Quality Control</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>New York Health & Racquet Club (Service Desk Lead):</strong> Hardware/software troubleshooting, ticket prioritization, IT inventory, user support SLAs</td>
-                        <td><strong>IT Operations, SLA Management & Service Delivery</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Special Initiatives:</strong> Fundraisers, volunteer coordination, app development, course launches, marketing campaigns, physical business relocation</td>
-                        <td><strong>Product Development, Event Operations & Change Control</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+<section class="section" id="about"><h2 class="section-title">Welcome to Golden Healing Solutions</h2>
+<p class="section-subtitle">A practical learning environment designed to help you move from learning concepts to actually building websites and applications.</p>
+<div class="cards">
+<div class="card"><div class="card-icon">📚</div><h3>Structured Learning</h3><p>Follow lessons in a clear sequence, complete knowledge checks, and build your skills one section at a time.</p></div>
+<div class="card"><div class="card-icon">💻</div><h3>Hands-On Practice</h3><p>Write code yourself instead of only reading about it. Experiment, run your code, and immediately see the result.</p></div>
+<div class="card"><div class="card-icon">🎓</div><h3>Career-Focused Projects</h3><p>Work toward projects you can refine and use as portfolio pieces to demonstrate your skills.</p></div>
+</div></section>
 
-        <!-- Case Studies -->
-        <section>
-            <h2>Featured Projects & Operational Case Studies</h2>
+<section class="section"><h2 class="section-title">Practice Your Code</h2>
+<p class="section-subtitle">Write HTML, CSS, and JavaScript and preview your website beside your code.</p>
+<div class="code-preview"><div><h3>💻 Your Code</h3><pre><code>&lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;p&gt;I am learning web development.&lt;/p&gt;</code></pre></div>
+<div><h3>👀 Live Preview</h3><div style="border:2px dashed #d4af37;border-radius:10px;padding:30px;text-align:center"><h2 style="margin-top:0">Hello, World!</h2><p>I am learning web development.</p></div></div></div>
+<div style="text-align:center;margin-top:25px"><a class="btn btn-gold" href="code-practice.html">Open Code Practice →</a></div>
+</section>
 
-            <div class="card">
-                <h3>01. Ground-Up Business Build, CRM & Call Center Operations (Golden Healing Solutions LLC)</h3>
-                <div class="meta">Scope: 0-to-1 Execution, Technology Integration, Workforce Management, Financial Oversight</div>
-                <ul>
-                    <li><strong>0-to-1 Execution & Tech Setup:</strong> Established business structure, launched web platform, and deployed CRM software to streamline call center communications and customer workflows.</li>
-                    <li><strong>Human Capital Lifecycle:</strong> Managed end-to-end talent acquisition (recruitment, interviews, hiring, onboarding, offboarding), structured pay bands, and processed employee payroll.</li>
-                    <li><strong>Governance & Task Management:</strong> Authored SOP policies, organized recurring meetings with clear agendas, assigned daily tasks, set strict project deadlines, and monitored work completion against business goals.</li>
-                </ul>
-            </div>
+<section class="portfolio"><div class="section"><h2 class="section-title">Build Your Portfolio</h2>
+<p class="section-subtitle">Complete multiple projects throughout the bootcamp that you can continue developing for your professional portfolio.</p>
+<div class="project-grid">
+<div class="project"><h3>Project 1</h3><p>Responsive Business Website</p><small>HTML • CSS • Responsive Design</small></div>
+<div class="project"><h3>Project 2</h3><p>Interactive JavaScript Application</p><small>HTML • CSS • JavaScript</small></div>
+<div class="project"><h3>Project 3</h3><p>Full-Stack Capstone Application</p><small>Full-Stack Development</small></div>
+</div></div></section>
 
-            <div class="card">
-                <h3>02. Licensed Esthetics Practice, Regulatory Compliance & Client Operations</h3>
-                <div class="meta">Scope: State Board Governance, Requirements Gathering, Confidential Records, Product Supply Chain</div>
-                <ul>
-                    <li><strong>Regulatory & Safety Governance:</strong> Enforced strict State Board sanitation, hygiene, and medical-grade safety standards, maintaining 100% regulatory compliance.</li>
-                    <li><strong>Requirements Gathering & Solution Design:</strong> Conducted detailed intake consultations to assess client needs, designing personalized multi-session care plans and product regimens.</li>
-                    <li><strong>Inventory & Client CRM:</strong> Audited medical/skincare supply inventory, managed vendor orders to optimize overhead, and maintained confidential client data records.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>03. End-to-End Luxury Catering, Hospitality & Event Directing</h3>
-                <div class="meta">Scope: Event Planning, Run-of-Show Logistics, Shift Leadership, Task Allocation</div>
-                <ul>
-                    <li><strong>Full Event Lifecycle:</strong> Managed end-to-end luxury catering events from initial prep and venue setup to live execution and post-event breakdown.</li>
-                    <li><strong>Team Meetings & Task Delegation:</strong> Led pre-event briefings to align teams on timelines and client specifications; served as Lead Server delegating closing tasks to ensure operational compliance.</li>
-                    <li><strong>Inventory & Supply Chain Control:</strong> Overseeing supply stocking, bar backing, inventory audits, cashier POS cash reconciliation, building a foundation in event logistics since age 15.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>04. IT Service Desk & SLA Management (New York Health & Racquet Club)</h3>
-                <div class="meta">Scope: IT Operations, Incident Management, Asset Control, SLA Compliance</div>
-                <ul>
-                    <li><strong>Service Operations:</strong> Directed first-line technical support operations, prioritizing hardware, software, and basic network ticketing to maintain maximum operational uptime.</li>
-                    <li><strong>Asset & Inventory Control:</strong> Managed technical inventory, procurement documentation, and IT tracking to ensure data integrity and audit readiness.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>05. Fraud Analysis & Operational Risk Management (Fiserv)</h3>
-                <div class="meta">Scope: Pattern Anomaly Detection, Case Audits, Risk Mitigation, Cross-Functional Alignment</div>
-                <ul>
-                    <li><strong>Risk Mitigation:</strong> Monitored high-volume transaction alert streams, identifying pattern anomalies to prevent financial loss across high-value client transactions.</li>
-                    <li><strong>Cross-Functional Optimization:</strong> Partnered with engineering and compliance teams to refine fraud detection algorithms and optimize case escalation protocols.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>06. Fundraisers, App/Course Launches & Creative Directing</h3>
-                <div class="meta">Scope: Community Outreach, Product Launches, Physical Logistics, Dance Directing</div>
-                <ul>
-                    <li><strong>Community & Digital Launches:</strong> Organized community fundraisers and volunteer teams; managed full lifecycle launches for digital courses, apps, and marketing campaigns.</li>
-                    <li><strong>Creative Direction:</strong> Choreographed competitive dance routines, managing milestone rehearsal schedules and performer development under event deadlines.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Core Competencies -->
-        <section>
-            <h2>Core Technical & PM Competencies</h2>
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <h4>Initiation & Operations</h4>
-                    <ul>
-                        <li>0-to-1 LLC & Web Setup</li>
-                        <li>CRM & Systems Integration</li>
-                        <li>Workflow & Process Design</li>
-                        <li>Business Facility Relocation</li>
-                    </ul>
-                </div>
-                <div class="skill-box">
-                    <h4>Healthcare & Event Logistics</h4>
-                    <ul>
-                        <li>Licensed Esthetics Practice</li>
-                        <li>State Board Regulatory Compliance</li>
-                        <li>Full Event Prep, Setup & Breakdown</li>
-                        <li>Pre-Shift Briefings & Task Delegation</li>
-                    </ul>
-                </div>
-                <div class="skill-box">
-                    <h4>Risk & IT Operations</h4>
-                    <ul>
-                        <li>Fraud Analysis & Anomaly Audits</li>
-                        <li>IT Service Desk & SLA Management</li>
-                        <li>Asset & Supply Inventory Tracking</li>
-                        <li>SIEM, Firewalls & Network Security</li>
-                    </ul>
-                </div>
-                <div class="skill-box">
-                    <h4>Governance & Leadership</h4>
-                    <ul>
-                        <li>SOP Policy Formulation</li>
-                        <li>Recruitment, Onboarding/Offboarding</li>
-                        <li>Fundraisers & Volunteer Mgmt</li>
-                        <li>Product, App & Course Launches</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            &copy; Golden Healing Solutions LLC • Melonie Campbell Portfolio
-        </footer>
-
-    </div>
-
-</body>
-</html>
+<section class="section cta"><h2 class="section-title">Ready to Practice?</h2><p class="section-subtitle">Start with the browser-based coding environment.</p><a class="btn btn-gold" href="code-practice.html">💻 Go to Code Practice</a></section>
+</main>
+<footer><strong>Golden Healing Solutions</strong><br>Web Development Bootcamp<br>© 2026 Golden Healing Solutions. All rights reserved.</footer>
+<script>
+const menuBtn=document.getElementById("menuBtn"),navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuBtn.setAttribute("aria-expanded",open)});
+</script>
+</body></html>
